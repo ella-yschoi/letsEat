@@ -2,13 +2,23 @@
   text-align: center;
 }
 
-.black-nav {
+.yellow-nav {
   display: flex;
-  background: rgb(0, 0, 0);
+  background: rgb(255, 191, 42);
   width: 100vw;
   justify-content: center;
   color: white;
+}
 
+.share {
+  color: rgb(255, 146, 7);
+}
+
+.modal {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgb(238, 238, 238);
+  text-align: left;
 }
 
 .div {

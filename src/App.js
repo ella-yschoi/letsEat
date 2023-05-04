@@ -19,7 +19,7 @@ function App() {
       <div className="yellow-nav">
         {/* JSX: style 넣을 때 style={{스타일명: '값'}} */}
         <h4 style={ {color: 'white', fontSize: '18px'} }
-        > 🍔 같이 먹어 🍔 </h4>
+        > 🍔 이거 먹자 🍔 </h4>
       </div>
 
       <button onClick={()=>{

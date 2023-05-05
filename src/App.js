@@ -58,18 +58,15 @@ function App() {
       </div>
       
       <div className="list"> {/* modal (X) 꼭 state 변경함수인 setModal 넣을 것 */}
-        <h4 button onClick={() => { setModal(true) }}>{ title[2] }</h4>
+        <h4 button onClick={() => { setModal(!modal) }}>{ title[2] }</h4>
         <p className="share">📮 공유하기</p>
       </div>
       
-      {/* 
-      - state에 따라 모달 UI가 어떻게 보일지 작성하기 → state가 false면 숨겨달라
+      {/* state에 따라 모달 UI가 어떻게 보일지 작성하기 → state가 false면 숨겨달라
       - 다만 이 중괄호 안에는 html 요소만 들어가야 하므로 조건문 아닌 삼항연산자 사용 
       - null은 비어있는 html용으로 자주 사용함 
       - 제목 클릭시 모달 띄우려면? 클릭시 state만 조절하기 */}
-      {
-        modal === true ? <Modal/> : false
-      }
+      {modal === true ? <Modal/> : false}
       
       {/* JSX: 변수 넣을 때 {} 사용 → Data Binding */}
       <h4>{ post }</h4> 

@@ -66,7 +66,7 @@ function App() {
       - 다만 이 중괄호 안에는 html 요소만 들어가야 하므로 조건문 아닌 삼항연산자 사용 
       - null은 비어있는 html용으로 자주 사용함 
       - 제목 클릭시 모달 띄우려면? 클릭시 state만 조절하기 */}
-      {modal === true ? <Modal/> : false}
+      {modal === true ? <Modal/> : ''}
       
       {/* JSX: 변수 넣을 때 {} 사용 → Data Binding */}
       <h4>{ post }</h4> 

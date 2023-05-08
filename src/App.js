@@ -44,24 +44,34 @@ function App() {
         따라서 state는 변동시 자동으로 html에 반영되게 만들고 싶을 때 사용하기 */}
       {/* onClick={} 안에는 함수 이름을 넣어야 함 */}
       <div className="list">
-        <h4>{ title[0] } <span onClick={()=>{ 
-          // setThumb 괄호 안에 있는건 기존 state를 갈아치워주는 역할
-          // 다만, 기존 state === 변경 state -> 변경 X
-          setThumb(thumb+1) }}> 👍 </span>
+        {/* setThumb 괄호 안에 있는건 기존 state를 갈아치워주는 역할
+        다만, 기존 state === 변경 state -> 변경 X */}
+        <h4>{ title[0] } 
+        <span onClick={()=>{ setThumb(thumb+1) }}> 👍 </span>
         { thumb }</h4>
         <p className="share">📮 공유하기</p>
       </div>
       
-      <div className="list">
-        <h4>{ title[1] }</h4>
-        <p className="share">📮 공유하기</p>
-      </div>
+      { // map()으로 같은 html 반복 생성하기: React는 array 안에 html 담아도 잘 보여줌
+        // array -> 글 제목 개수만큼 생성되도록 title로
+        // 파라미터는 두 개까지 가능 (a: array 안에 있던 data, i: 반복문 도는 정수)
+        title.map(function(a, i){ 
+          return (
+            // key: 반복문으로 html 생성하면 key={html마다 다른 숫자} 추가 필요
+          <div className="list" key={i}> 
+          <h4>{ title[i] }
+          <span onClick={()=>{ setThumb(thumb+1) }}> 👍 </span>
+          { thumb }</h4>
+          <p className="share">📮 공유하기</p>
+          </div>)
+        }) 
+      }
       
       <div className="list"> {/* modal (X) 꼭 state 변경함수인 setModal 넣을 것 */}
         <h4 button onClick={() => { setModal(!modal) }}>{ title[2] }</h4>
         <p className="share">📮 공유하기</p>
       </div>
-      
+
       {/* state에 따라 모달 UI가 어떻게 보일지 작성하기 → state가 false면 숨겨달라
       - 다만 이 중괄호 안에는 html 요소만 들어가야 하므로 조건문 아닌 삼항연산자 사용 
       - null은 비어있는 html용으로 자주 사용함 

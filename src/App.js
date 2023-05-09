@@ -11,7 +11,7 @@ function App() {
     // a는 state에 보관했던 자료가 나옴
     // b는 state 변경을 도와주는 함수이며, 이걸 써야 html 재렌더링이 잘 됨
   let [title, setTitle] = useState(['성수역 | 데이트', '강남역 | 회식', '압구정역 | 모임']);
-  let [thumb, setThumb] = useState(0);
+  let [thumb, setThumb] = useState([0,0,0]);
   let [modal, setModal] = useState(false); // 안보이는 상태 기본값 설정
   
   return (
@@ -43,14 +43,14 @@ function App() {
       {/* state는 갑자기 변경되면 state 쓰던 html은 자동으로 재렌더링 됨 
         따라서 state는 변동시 자동으로 html에 반영되게 만들고 싶을 때 사용하기 */}
       {/* onClick={} 안에는 함수 이름을 넣어야 함 */}
-      <div className="list">
+      {/* <div className="list"> */}
         {/* setThumb 괄호 안에 있는건 기존 state를 갈아치워주는 역할
         다만, 기존 state === 변경 state -> 변경 X */}
-        <h4>{ title[0] } 
+        {/* <h4>{ title[0] } 
         <span onClick={()=>{ setThumb(thumb+1) }}> 👍 </span>
         { thumb }</h4>
         <p className="share">📮 공유하기</p>
-      </div>
+      </div> */}
       
       { // map()으로 같은 html 반복 생성하기: React는 array 안에 html 담아도 잘 보여줌
         // array -> 글 제목 개수만큼 생성되도록 title로
@@ -59,9 +59,14 @@ function App() {
           return (
             // key: 반복문으로 html 생성하면 key={html마다 다른 숫자} 추가 필요
           <div className="list" key={i}> 
-          <h4>{ title[i] }
-          <span onClick={()=>{ setThumb(thumb+1) }}> 👍 </span>
-          { thumb }</h4>
+          <h4>
+          { title[i] } 
+          <span onClick={()=>{
+            let copy = [...thumb];
+            copy[i] = copy[i] + 1;
+            setThumb(copy)
+          }}> 👍 </span>{ thumb[i] }
+          </h4>
           <p className="share">📮 공유하기</p>
           </div>)
         }) 

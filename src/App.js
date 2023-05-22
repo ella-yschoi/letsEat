@@ -3,7 +3,7 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  let report = '🤙 나만 아는 맛집 제보하기'; 
+  let report = '🧁 나만 아는 맛집 제보하기'; 
   let [title, setTitle] = useState(['성수역', '강남역', '압구정역']);
   let [thumb, setThumb] = useState([0,0,0]);
   let [modal, setModal] = useState(false); 
@@ -43,13 +43,10 @@ function App() {
               }}> 👍 </span>{ thumb[i] }
               </h4>
               <p className="share">📮 공유하기</p>
+              <button className="deleteButton">삭제</button>
           </div>)
         }) 
       }
-
-      <input onChange={(e) => {setInputValue(e.target.value);
-      console.log(inputValue)}} />
-
 
       {modal === true ? 
       <Modal title={title} 
@@ -57,7 +54,12 @@ function App() {
       modalTitle={modalTitle}
       /> : ''}
       
-      <h4>{ report }</h4> 
+      <textarea className='reportArea' placeholder = "추천 맛집이 있나요?" 
+      onChange={(e) => {setInputValue(e.target.value);}} /><p/>
+      
+      <button className='reportButton'>{ report }</button><p/>
+      
+
     </div>
   );
 }

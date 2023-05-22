@@ -36,12 +36,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -53,15 +47,20 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.deleteButton {
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reportArea {
+  width: 12.5rem;
+  padding: .625rem;
+  margin-top: 1.25rem;
+}
+
+.reportButton {
+  width: 13.9rem;
+  background-color: rgb(255, 191,42);
+  border-color: transparent;
+  border-radius: 5px;
+  padding: .3125rem .9375rem .3125rem .9375rem;
 }

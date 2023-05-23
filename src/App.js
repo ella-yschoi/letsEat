@@ -6,7 +6,7 @@ import { useState } from 'react';
 function App() {
   let report = '🧁 나만 아는 맛집 제보하기'; 
   let [title, setTitle] = useState(['성수역', '강남역', '압구정역']);
-  let [thumb, setThumb] = useState([0,0,0]);
+  let [thumb, setThumb] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false); 
   let [modalTitle, setModalTitle] = useState(0);
   let [inputValue, setInputValue] = useState('');
@@ -17,6 +17,15 @@ function App() {
       setThumb([...thumb, 0]);
       setInputValue('');
     }
+  };
+  
+  const deletePost = (index) => {
+    const newTitle = [...title];
+    const newThumb = [...thumb];
+    newTitle.splice(index, 1);
+    newThumb.splice(index, 1);
+    setTitle(newTitle);
+    setThumb(newThumb);
   };
   
   return (
@@ -52,7 +61,7 @@ function App() {
               }}> 👍 </span>{ thumb[i] }
               </h4>
               <p className="share">📮 공유하기</p>
-              <button className="deleteButton">삭제</button>
+              <button className="deleteButton" onClick={() => deletePost(i)}>삭제</button>
           </div>)
         }) 
       }

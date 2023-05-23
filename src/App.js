@@ -17,17 +17,17 @@ function App() {
         > 🍔 이거 먹자 🍔 </h4>
       </div>
 
-      <button onClick={()=>{
+      <button className='sortButton' onClick={()=>{
         let sortTitle = [...title];
         sortTitle.sort();
         setTitle(sortTitle);
       }}>가나다순 정렬</button>
     
-      <button onClick={()=>{ 
+      <button className='recommendButton' onClick={()=>{ 
           let editTitle = [...title]; 
           editTitle[0] = '망원역'
           setTitle(editTitle);
-        }}> 이번주 데이트는 망원동 어때요? </button>
+        }}> 이번 주는 망원동 어때요? </button>
       
       {
         title.map(function(a, i){ 

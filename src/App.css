@@ -4,20 +4,20 @@
 
 .yellow-nav {
   display: flex;
-  background: rgb(255, 191, 42);
+  background: #ffbf2a;
   width: 100vw;
   justify-content: center;
   color: white;
 }
 
 .share {
-  color: rgb(255, 146, 7);
+  color: #ff9207;
 }
 
 .modal {
   margin-top: 20px;
   padding: 20px;
-  background: rgb(238, 238, 238);
+  background: #eeeeee;
   text-align: left;
 }
 
@@ -29,11 +29,6 @@
   padding-left: 20px;
   text-align: left;
   border-bottom: 1px solid grey;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 .App-header {
@@ -48,7 +43,12 @@
 }
 
 .deleteButton {
+  width: 2.5rem;
+  height: 1.5rem;
   margin-bottom: 1rem;
+  background-color: #ffbf2a;
+  border-color: transparent;
+  border-radius: 5px;
 }
 
 .reportArea {
@@ -59,8 +59,24 @@
 
 .reportButton {
   width: 13.9rem;
-  background-color: rgb(255, 191,42);
+  background-color: #ffbf2a;
   border-color: transparent;
+  border-radius: 5px;
+  padding: .3125rem .9375rem .3125rem .9375rem;
+}
+
+.sortButton {
+  margin: 10px;
+  background-color: transparent;
+  border-color: #ffbf2a;
+  border-radius: 5px;
+  padding: .3125rem .9375rem .3125rem .9375rem;
+}
+
+.recommendButton {
+  margin: 10px;
+  background-color: transparent;
+  border-color: #ffbf2a;
   border-radius: 5px;
   padding: .3125rem .9375rem .3125rem .9375rem;
 }

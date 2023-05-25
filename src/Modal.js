@@ -1,5 +1,3 @@
-import react from 'react';
-
 function Modal(props) {
     return (
     <div className='modal'>

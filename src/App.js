@@ -11,6 +11,8 @@ function App() {
   let [modalTitle, setModalTitle] = useState(0);
   let [inputValue, setInputValue] = useState('');
   
+
+  // 맛집 제보하기 버튼
   const addPost = () => {
     if (inputValue) {
       setTitle([...title, inputValue]);
@@ -19,6 +21,7 @@ function App() {
     }
   };
   
+  // 제보한 맛집 삭제
   const deletePost = (index) => {
     const newTitle = [...title];
     const newThumb = [...thumb];
@@ -35,18 +38,21 @@ function App() {
         > 🍔 이거 먹자 🍔 </h4>
       </div>
 
+      {/* 가나다순 정렬 */}
       <button className='sortButton' onClick={()=>{
         let sortTitle = [...title];
         sortTitle.sort();
         setTitle(sortTitle);
       }}>가나다순 정렬</button>
-    
+
+      {/* 다른 지역 추천 */}
       <button className='recommendButton' onClick={()=>{ 
           let editTitle = [...title]; 
           editTitle[0] = '망원역'
           setTitle(editTitle);
         }}> 이번 주는 망원동 어때요? </button>
       
+      {/* 기본 지역 3개 띄우기 w.모달, 공유, 삭제 */}
       {
         title.map(function(a, i){ 
           return (
@@ -65,21 +71,23 @@ function App() {
           </div>)
         }) 
       }
-
+      
+      {/* 모달 */}
       {modal === true ? 
       <Modal title={title} 
       setTitle={setTitle}
       modalTitle={modalTitle}
       /> : ''}
       
+      {/* 추천 맛집 입력란 */}
       <textarea 
       className='reportArea' 
       placeholder = "추천 맛집이 있나요?" 
       value={inputValue}
       onChange={(e) => {setInputValue(e.target.value);}} />
-      
       <p/>
       
+      {/* 맛집 제보 버튼 */}
       <button 
       className='reportButton'
       onClick={addPost}>
@@ -88,8 +96,6 @@ function App() {
       
     </div>
   );
-
-  <Modal/>
 }
 
 export default App;

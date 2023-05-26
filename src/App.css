@@ -2,11 +2,19 @@
   text-align: center;
 }
 
+.logo {
+  width: 50px;
+  height: 50px;
+  padding-left: 1.3rem;
+  padding-right: 0.5rem;
+  padding-top: .3125rem;
+}
+
 .yellow-nav {
   display: flex;
   background: #ffbf2a;
   width: 100vw;
-  justify-content: center;
+  justify-content: left;
   color: white;
 }
 
@@ -15,8 +23,8 @@
 }
 
 .modal {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
   background: #eeeeee;
   text-align: left;
 }
@@ -26,9 +34,9 @@
 }
 
 .list {
-  padding-left: 20px;
+  padding-left: 1.25rem;
   text-align: left;
-  border-bottom: 1px solid grey;
+  border-bottom: .0625rem solid grey;
 }
 
 .App-header {
@@ -48,7 +56,7 @@
   margin-bottom: 1rem;
   background-color: #ffbf2a;
   border-color: transparent;
-  border-radius: 5px;
+  border-radius: .3125rem;
 }
 
 .reportArea {
@@ -61,7 +69,7 @@
   width: 13.9rem;
   background-color: #ffbf2a;
   border-color: transparent;
-  border-radius: 5px;
+  border-radius: .3125rem;
   padding: .3125rem .9375rem .3125rem .9375rem;
 }
 
@@ -69,14 +77,14 @@
   margin: 10px;
   background-color: transparent;
   border-color: #ffbf2a;
-  border-radius: 5px;
+  border-radius: .3125rem;
   padding: .3125rem .9375rem .3125rem .9375rem;
 }
 
 .recommendButton {
-  margin: 10px;
+  margin: .625rem;
   background-color: transparent;
   border-color: #ffbf2a;
-  border-radius: 5px;
+  border-radius: .3125rem;
   padding: .3125rem .9375rem .3125rem .9375rem;
 }

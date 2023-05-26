@@ -34,8 +34,9 @@ function App() {
   return (
     <div className="App"> 
       <div className="yellow-nav">
+        <img className='logo' src='lets_eat_logo.png' alt='lets_eat_logo'></img>
         <h4 style={ {color: 'white', fontSize: '18px'} }
-        > 🍔 이거 먹자 🍔 </h4>
+        >이거 먹자</h4>
       </div>
 
       {/* 가나다순 정렬 */}
